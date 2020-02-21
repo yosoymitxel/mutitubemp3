@@ -1,9 +1,9 @@
 <?php
-/*
+
 ini_set('display_errors',1);
 ini_set('display_startup_errors',1);
 error_reporting(E_ALL);
-*/
+
 
 /*DEV*/
 
@@ -163,45 +163,45 @@ function sc_dom_cdn($id,$link,$tipo='css',$depurar=false){
 
 function sc_url_informacion_sitio_actual(){
     $indicesServer = array('PHP_SELF',
-    'argv',
-    'argc',
-    'GATEWAY_INTERFACE',
-    'SERVER_ADDR',
-    'SERVER_NAME',
-    'SERVER_SOFTWARE',
-    'SERVER_PROTOCOL',
-    'REQUEST_METHOD',
-    'REQUEST_TIME',
-    'REQUEST_TIME_FLOAT',
-    'QUERY_STRING',
-    'DOCUMENT_ROOT',
-    'HTTP_ACCEPT',
-    'HTTP_ACCEPT_CHARSET',
-    'HTTP_ACCEPT_ENCODING',
-    'HTTP_ACCEPT_LANGUAGE',
-    'HTTP_CONNECTION',
-    'HTTP_HOST',
-    'HTTP_REFERER',
-    'HTTP_USER_AGENT',
-    'HTTPS',
-    'REMOTE_ADDR',
-    'REMOTE_HOST',
-    'REMOTE_PORT',
-    'REMOTE_USER',
-    'REDIRECT_REMOTE_USER',
-    'SCRIPT_FILENAME',
-    'SERVER_ADMIN',
-    'SERVER_PORT',
-    'SERVER_SIGNATURE',
-    'PATH_TRANSLATED',
-    'SCRIPT_NAME',
-    'REQUEST_URI',
-    'PHP_AUTH_DIGEST',
-    'PHP_AUTH_USER',
-    'PHP_AUTH_PW',
-    'AUTH_TYPE',
-    'PATH_INFO',
-    'ORIG_PATH_INFO') ;
+        'argv',
+        'argc',
+        'GATEWAY_INTERFACE',
+        'SERVER_ADDR',
+        'SERVER_NAME',
+        'SERVER_SOFTWARE',
+        'SERVER_PROTOCOL',
+        'REQUEST_METHOD',
+        'REQUEST_TIME',
+        'REQUEST_TIME_FLOAT',
+        'QUERY_STRING',
+        'DOCUMENT_ROOT',
+        'HTTP_ACCEPT',
+        'HTTP_ACCEPT_CHARSET',
+        'HTTP_ACCEPT_ENCODING',
+        'HTTP_ACCEPT_LANGUAGE',
+        'HTTP_CONNECTION',
+        'HTTP_HOST',
+        'HTTP_REFERER',
+        'HTTP_USER_AGENT',
+        'HTTPS',
+        'REMOTE_ADDR',
+        'REMOTE_HOST',
+        'REMOTE_PORT',
+        'REMOTE_USER',
+        'REDIRECT_REMOTE_USER',
+        'SCRIPT_FILENAME',
+        'SERVER_ADMIN',
+        'SERVER_PORT',
+        'SERVER_SIGNATURE',
+        'PATH_TRANSLATED',
+        'SCRIPT_NAME',
+        'REQUEST_URI',
+        'PHP_AUTH_DIGEST',
+        'PHP_AUTH_USER',
+        'PHP_AUTH_PW',
+        'AUTH_TYPE',
+        'PATH_INFO',
+        'ORIG_PATH_INFO') ;
 
     echo '<table cellpadding="10">' ;
     foreach ($indicesServer as $arg) {
@@ -269,6 +269,23 @@ function sc_url_get_id_youtube($urlYoutube){
     return (sc_str_incluye_expresion_regular($urlYoutube,$expresionUrl)) ?
         substr(sc_str_extraer_expresion_regular($urlYoutube, $expresionIdVideo),3) :
         false;
+}
+
+function sc_url_generar_iframe_youtube($link,$altura='423',$acho='240',$depurar=false){
+    sc_dev_depurar($depurar,array($link,$altura='423',$acho='240'),'sc_url_generar_iframe_youtube');
+    $enlace = sc_url_get_id_youtube(sc_str_quitar_espacios_blancos($link));
+    if($enlace){
+        $altura = sc_str_incluye_expresion_regular($altura,'\d+(\%|px)')?($altura):($altura.'px');
+        $acho   = sc_str_incluye_expresion_regular($acho  ,'\d+(\%|px)')?($acho)  :  ($acho.'px');
+        echo '
+            <iframe width="'.$acho.'" height="'.$altura.'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen 
+                src="https://www.youtube.com/embed/'.$enlace.'">
+            </iframe>
+        ';
+        return true;
+    }else{
+        return false;
+    }
 }
 
 /*SQL*/
@@ -370,11 +387,12 @@ function sc_str_reemplazar_expresion_regular($t,$expresion,$reemplazo,$depurar){
 
 function sc_str_incluye_expresion_regular($t,$expresion,$depurar=false){
     $expresion = sc_str_corregir_expresion_regular($expresion);
-    sc_dev_depurar($depurar,$expresion,'sc_str_incluye_expresion_regular');
+    sc_dev_depurar($depurar,array($t,$expresion),'sc_str_incluye_expresion_regular');
     return preg_match($expresion,$t);
 }
 
-function sc_str_corregir_expresion_regular($expresion){
+function sc_str_corregir_expresion_regular($expresion,$depurar=false){
+    sc_dev_depurar($depurar,array($expresion),'sc_str_corregir_expresion_regular');
     return (sc_str_inicia_con($expresion,'/') && sc_str_finaliza_con($expresion,'/')) ?
         $expresion :
         '/'.$expresion.'/';
@@ -408,7 +426,33 @@ function sc_str_quitar_espacios_extra($t,$depurar=false){
     return trim(sc_str_reemplazar_expresion_regular($t,'/(\n|\s)+/',' '));
 }
 
+function sc_str_quitar_espacios_blancos($t,$depurar=false){
+    sc_dev_depurar($depurar,$t);
+    return trim(sc_str_reemplazar_expresion_regular($t,'(\n|\s|\t|\r)+',''));
+}
 
+/*FECHAS*/
+function sc_fec_formatear($fecha,$formato='Y-m-d H:i:s',$depurar=false){
+    sc_dev_depurar($depurar,array($fecha,$formato),'sc_fec_formatear');
+    return date($formato, strtotime($fecha));
+}
+
+
+/*ARRAY*/
+function sc_arr_incluye_expresion_regular($array,$expresion,$depurar=false){
+    sc_dev_depurar($depurar,array($array,$expresion),'sc_arr_incluye_expresion_regular');
+
+    if (is_array($array) && isset($expresion{1})){
+        $expresion = sc_str_corregir_expresion_regular($expresion);
+        foreach ($array as $valor){
+            if (sc_str_incluye_expresion_regular($valor,$expresion)){
+                return true;
+            }
+        }
+    }
+
+    return false;
+}
 
 ?>
 

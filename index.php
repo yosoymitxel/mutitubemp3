@@ -1,6 +1,6 @@
 <?php
     require_once './Librerias/funciones.php';
-    $seBusca = (isset($_GET));
+    $seBusca = (isset($_GET))?sc_arr_incluye_expresion_regular($_GET,'(https?:\/\/)?((((m|www)\.)?youtube\.com)|(youtu\.be))\/(.)+'):false;
 ?>
 <!DOCTYPE html>
 <html>
@@ -139,17 +139,17 @@
                     </form>
                 </div>
                 <div class="col-lg-3 col-12">
-                    <h5 class="white-text">joashpereira.com</h5>
+                    <h5 class="white-text">yosoymitxel.com</h5>
                     <ul>
-                        <li><a class="white-text" href="http://www.joashpereira.com/">Home</a></li>
-                        <li><a class="white-text" href="http://www.joashpereira.com/blog">Blog</a></li>
+                        <li><a class="white-text" href="http://www.yosoymitxel.com/">Home</a></li>
+                        <li><a class="white-text" href="http://www.yosoymitxel.com/blog">Blog</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-12">
                     <h5 class="white-text">Social</h5>
                     <ul>
                         <li>
-                            <a class="white-text" href="https://www.behance.net/joashp">
+                            <a class="white-text" href="https://www.behance.net/yosoymitxel">
                                 <i class="small fa fa-behance-square white-text"></i> Behance
                             </a>
                         </li>
@@ -159,12 +159,12 @@
                             </a>
                         </li>
                         <li>
-                            <a class="white-text" href="https://github.com/joashp">
+                            <a class="white-text" href="https://github.com/yosoymitxel">
                                 <i class="small fa fa-github-square white-text"></i> Github
                             </a>
                         </li>
                         <li>
-                            <a class="white-text" href="https://www.linkedin.com/in/joashp">
+                            <a class="white-text" href="https://www.linkedin.com/in/yosoymitxel">
                                 <i class="small fa fa-linkedin-square white-text"></i> Linkedin
                             </a>
                         </li>
@@ -174,7 +174,7 @@
         </div>
         <div class="footer-copyright default_color">
             <div class="container">
-                Made by <a class="white-text" href="http://joashpereira.com">Joash Pereira</a>. Thanks to <a class="white-text" href="http://materializecss.com/">materializecss</a>
+                Made by <a class="white-text" href="http://yosoymitxel.com">Mixel Code</a>. Thanks to <a class="white-text" href="http://materializecss.com/">materializecss</a>
             </div>
         </div>
     </footer>
