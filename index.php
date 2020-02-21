@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
     <meta name="theme-color" content="#2196F3">
     <title>MultiTubeMP3</title>
+    <link rel="shortcut icon" href="https://www.computerhope.com/cdn/favicon.ico" type="image/x-icon">
     <!-- CSS  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="Assets/min/plugin-min.css" type="text/css" rel="stylesheet">
@@ -30,14 +31,14 @@
                 <div class="nav-wrapper">
                     <a href="#" id="logo-container" class="brand-logo">Multi<span class="span_h2" style="color: #0069c0;font-weight: 600;">Tube</span>MP3</a>
                     <ul class="right hide-on-med-and-down">
-                        <li><a href="http://www.linkea.ga/">Linkea</a></li>
-                        <li><a href="https://github.com/yosoymitxel/">Desarrollador</a></li>
-                        <li><a href="https://github.com/yosoymitxel/mutitubemp3.git">Proyecto Open Source</a></li>
+                        <li><a href="http://www.linkea.ga/" target="_blank">Linkea</a></li>
+                        <li><a href="https://github.com/yosoymitxel/" target="_blank">Desarrollador</a></li>
+                        <li><a href="https://github.com/yosoymitxel/mutitubemp3.git" target="_blank">Proyecto Open Source</a></li>
                     </ul>
                     <ul id="nav-mobile" class="side-nav">
-                        <li><a href="http://www.linkea.ga/">Linkea</a></li>
-                        <li><a href="https://github.com/yosoymitxel/">Desarrollador</a></li>
-                        <li><a href="https://github.com/yosoymitxel/mutitubemp3.git">Proyecto Open Source</a></li>
+                        <li><a href="http://www.linkea.ga/" target="_blank">Linkea</a></li>
+                        <li><a href="https://github.com/yosoymitxel/" target="_blank">Desarrollador</a></li>
+                        <li><a href="https://github.com/yosoymitxel/mutitubemp3.git" target="_blank">Proyecto Open Source</a></li>
                     </ul>
                 <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
                 </div>
@@ -113,59 +114,39 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-12">
-                    <form class="col-12" action="test/contact.php" method="post">
-                        <div class="row">
-                            <div class="input-field col-6">
-                                <i class="mdi-action-account-circle prefix white-text"></i>
-                                <input id="icon_prefix" name="name" type="text" class="validate white-text">
-                                <label for="icon_prefix" class="white-text">Link de vídeo de YouTube</label>
-                            </div>
-                            <div class="input-field col-6">
-                                <i class="mdi-communication-email prefix white-text"></i>
-                                <input id="icon_email" name="email" type="email" class="validate white-text">
-                                <label for="icon_email" class="white-text">Email-id</label>
-                            </div>
-                            <div class="input-field col-12">
-                                <i class="mdi-editor-mode-edit prefix white-text"></i>
-                                <textarea id="icon_prefix2" name="message" class="materialize-textarea white-text"></textarea>
-                                <label for="icon_prefix2" class="white-text">Message</label>
-                            </div>
-                            <div class="col-7 offset-7 col-5">
-                                <button class="btn waves-effect waves-light red darken-1" type="submit">Submit
-                                    <i class="mdi-content-send right white-text"></i>
-                                </button>
-                            </div>
+                    <div class="row">
+                        <div class="">
+                            <p class="text-left text-sm-justify text-white">
+                                <b>ADVERTENCIA:</b>
+                                <br>Ninguno de los archivos que se muestran aquí están alojados o transmitidos por este servidor.
+                                <br>No puede usar este sitio para distribuir o descargar ningún material cuando no tenga los derechos legales para hacerlo.
+                                <br>Es su responsabilidad adherirse a estos términos.
+                                <br>Usted también acepta que el contenido que descargue aquí es solo para fines de prueba y no debe utilizarse para uso comercial o como producto final en un sitio en producción.
+                            </p>
                         </div>
-                    </form>
-                </div>
-                <div class="col-lg-3 col-12">
-                    <h5 class="white-text">yosoymitxel.com</h5>
-                    <ul>
-                        <li><a class="white-text" href="http://www.yosoymitxel.com/">Home</a></li>
-                        <li><a class="white-text" href="http://www.yosoymitxel.com/blog">Blog</a></li>
-                    </ul>
+                    </div>
                 </div>
                 <div class="col-lg-3 col-12">
                     <h5 class="white-text">Social</h5>
                     <ul>
                         <li>
-                            <a class="white-text" href="https://www.behance.net/yosoymitxel">
-                                <i class="small fa fa-behance-square white-text"></i> Behance
+                            <a class="white-text" href="https://www.facebook.com/yosoymitxel">
+                                <i class="small fa fa-facebook-square white-text" target="_blank"></i> Facebook
                             </a>
                         </li>
                         <li>
-                            <a class="white-text" href="https://www.facebook.com/joash.c.pereira">
-                                <i class="small fa fa-facebook-square white-text"></i> Facebook
+                            <a class="white-text" href="https://www.twitter.com/yosoymitxel">
+                                <i class="small fa fa-twitter-square white-text" target="_blank"></i> Twitter
                             </a>
                         </li>
                         <li>
-                            <a class="white-text" href="https://github.com/yosoymitxel">
+                            <a class="white-text" href="https://github.com/yosoymitxel" target="_blank">
                                 <i class="small fa fa-github-square white-text"></i> Github
                             </a>
                         </li>
                         <li>
                             <a class="white-text" href="https://www.linkedin.com/in/yosoymitxel">
-                                <i class="small fa fa-linkedin-square white-text"></i> Linkedin
+                                <i class="small fa fa-linkedin-square white-text" target="_blank"></i> Linkedin
                             </a>
                         </li>
                     </ul>
@@ -174,7 +155,7 @@
         </div>
         <div class="footer-copyright default_color">
             <div class="container">
-                Made by <a class="white-text" href="http://yosoymitxel.com">Mixel Code</a>. Thanks to <a class="white-text" href="http://materializecss.com/">materializecss</a>
+                Hecho <a class="white-text" href="https://www.github.com/yosoymitxel.com" target="_blank">Mixel Code</a>. Con <a class="white-text" href="http://materializecss.com/" target="_blank">materializecss</a>
             </div>
         </div>
     </footer>
