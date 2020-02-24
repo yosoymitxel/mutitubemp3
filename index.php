@@ -84,7 +84,7 @@
                         sc_dom_etiqueta_inicio('div','div-descargas-container-row-'.$i,'row justify-content-center text-center');
                             sc_dom_crear_elemento('h2','Enlaces de <span class="span_h2">descarga</span>',false,'h1-descargas-titulo-'.$i,'center header text_h2');
                             foreach ($_GET as $enlace){
-                                if(sc_str_incluye_expresion_regular($enlace,'(https?:\/\/)?(www\.)?(youtube\.com\/watch\?v=(\w+|\-)+|youtu\.be\/(\w+|\-)+)',true)){
+                                if(sc_str_incluye_expresion_regular($enlace,'(https?:\/\/)?(www\.)?(youtube\.com\/watch\?v=(\w+|\-)+|youtu\.be\/(\w+|\-)+)')){
                                     $i++;
                                     $enlace = sc_url_get_id_youtube($enlace);
 
@@ -202,7 +202,7 @@
                                 </div>
                             </div>`;
             $(`#div-form-container`).append(enlace);
-            dev_echo(enlace);
+            validacionEnlaces();
         }
 
         function validacionEnlaces(){
@@ -210,7 +210,7 @@
 
             for(let i=0; i<cantidadEnlaces;i++){
                 let valorEnlace = dev_quitar_espacios_blancos(dev_dom_value(`#enlace-0${i+1}`));
-                $(`#enlace-0${i+1}`).val(valorEnlace);
+                $(`#enlace-0${i+1}`).val(dev_string_reemplazar_expresion_regular(valorEnlace,'(&(\\w+)=(\\w+))',''));
             }
 
         }
