@@ -90,11 +90,11 @@
 
                                     sc_dom_etiqueta_inicio('div','div-iframe-descarga-'.$i,'col-12 my-2');
                                     echo
-                                        '<iframe style="width:100%;min-width:200px;max-width:350px;height:57px;border:0;overflow:hidden;" scrolling="no" 
+                                        '<iframe id="iframe-break"style="width:100%;min-width:200px;max-width:350px;height:57px;border:0;overflow:hidden;" scrolling="no" 
                                             src="https://break.tv/widget/button/?link=https://www.youtube.com/watch?v='.$enlace.'&color=4391D0&text=fff">
                                          </iframe>';
                                     echo
-                                        '<iframe width="95px" height="57px" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen 
+                                        '<iframe id="iframe-youtube"width="95px" height="57px" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen 
                                             src="https://www.youtube.com/embed/'.$enlace.'">
                                          </iframe>
                                         ';
@@ -155,7 +155,7 @@
         </div>
         <div class="footer-copyright default_color">
             <div class="container">
-                Hecho <a class="white-text" href="https://www.github.com/yosoymitxel.com" target="_blank">Mixel Code</a>. Con <a class="white-text" href="http://materializecss.com/" target="_blank">materializecss</a>
+                Hecho por <a class="white-text" href="https://www.github.com/yosoymitxel.com" target="_blank">Mixel Code</a>. Con <a class="white-text" href="http://materializecss.com/" target="_blank">materializecss</a>
             </div>
         </div>
     </footer>
@@ -214,5 +214,6 @@
             }
 
         }
+
     </script>
 </html>
