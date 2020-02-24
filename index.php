@@ -1,6 +1,6 @@
 <?php
     require_once './Librerias/funciones.php';
-    $seBusca = (isset($_GET))?sc_arr_incluye_expresion_regular($_GET,'(https?:\/\/)?((((m|www)\.)?youtube\.com)|(youtu\.be))\/(.)+'):false;
+    $seBusca = (isset($_GET))?sc_arr_incluye_expresion_regular($_GET,'(https?:\/\/)?(www\.)?(youtube\.com\/watch\?v=\w+|youtu\.be\/\w+)'):false;
 ?>
 <!DOCTYPE html>
 <html>
@@ -58,7 +58,7 @@
                         <div id="div-form-container" class="col-12">
                             <div id="form-div-enlace-01"class="col-md-12 mb-3">
                                 <label for="enlace-01">Link de vídeo de YouTube Nr. 1</label>
-                                <input type="text" class="form-control" id="enlace-01" name="enlace-01" placeholder="https://www.youtube.com/watch?v=sFlxgZ8kgMI" value="" pattern="(https?://)?((((m|www)\.)?youtube\.com)|(youtu\.be))\/(.)+" required>
+                                <input type="text" class="form-control" id="enlace-01" name="enlace-01" placeholder="https://www.youtube.com/watch?v=sFlxgZ8kgMI" value="" pattern="(https?://)?(www\.)?(youtube\.com/watch\?v=\w+|youtu\.be/\w+)" required>
                                 <div class="valid-feedback">
                                     !El enlace es correcto!
                                 </div>
@@ -84,7 +84,7 @@
                         sc_dom_etiqueta_inicio('div','div-descargas-container-row-'.$i,'row justify-content-center text-center');
                             sc_dom_crear_elemento('h2','Enlaces de <span class="span_h2">descarga</span>',false,'h1-descargas-titulo-'.$i,'center header text_h2');
                             foreach ($_GET as $enlace){
-                                if(sc_str_incluye_expresion_regular($enlace,'(https?:\/\/)?((((m|www)\.)?youtube\.com)|(youtu\.be))\/(.)+')){
+                                if(sc_str_incluye_expresion_regular($enlace,'(https?:\/\/)?(www\.)?(youtube\.com\/watch\?v=\w+|youtu\.be\/\w+)')){
                                     $i++;
                                     $enlace = sc_url_get_id_youtube($enlace);
 
@@ -193,7 +193,7 @@
             let cantidadEnlaces = ($('[id^=form-div-enlace-]').length)+1;
             let enlace = `<div id="form-div-enlace-0${cantidadEnlaces}"class="col-md-12 mb-3">
                                 <label for="enlace-0${cantidadEnlaces}">Link de vídeo de YouTube Nr. ${cantidadEnlaces}</label>
-                                <input type="text" class="form-control" id="enlace-0${cantidadEnlaces}" name="enlace-0${cantidadEnlaces}" placeholder="https://www.youtube.com/watch?v=sFlxgZ8kgMI" value=""  pattern="(https?://)?((((m|www)\\.)?youtube\\.com)|(youtu\\.be))\\/(.)+"  required>
+                                <input type="text" class="form-control" id="enlace-0${cantidadEnlaces}" name="enlace-0${cantidadEnlaces}" placeholder="https://www.youtube.com/watch?v=sFlxgZ8kgMI" value=""  pattern="(https?://)?(www\\.)?(youtube\\.com/watch\\?v=\\w+|youtu\\.be/\\w+)"  required>
                                 <div class="valid-feedback">
                                     !El enlace es correcto!
                                 </div>
