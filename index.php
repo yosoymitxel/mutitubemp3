@@ -103,15 +103,15 @@
                                     $enlace = sc_url_get_id_youtube($enlace);
 
                                     sc_dom_etiqueta_inicio('div','div-iframe-descarga-'.$i,'col-12 my-2');
-                                    echo "<h5 id='titulo-musica-$i' class='center header text_h5 mb-4'>$i - ".get_youtube_title($enlace)."</h5>";
-                                    echo
-                                        '<iframe id="iframe-break"style="width:100%;min-width:200px;max-width:350px;height:57px;border:0;overflow:hidden;" scrolling="no" 
-                                            src="https://break.tv/widget/button/?link=https://www.youtube.com/watch?v='.$enlace.'&color=4391D0&text=fff">
-                                         </iframe>';
-                                    echo
-                                        '<iframe id="iframe-youtube"width="95px" height="57px" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen 
-                                            src="https://www.youtube.com/embed/'.$enlace.'">
-                                         </iframe>
+                                        echo "<h5 id='titulo-musica-$i' class='center header text_h5 mb-4'>$i - ".get_youtube_title($enlace)."</h5>";
+                                        echo
+                                            '<iframe id="iframe-break"style="width:100%;min-width:200px;max-width:350px;height:57px;border:0;overflow:hidden;" scrolling="no" 
+                                                src="https://break.tv/widget/button/?link=https://www.youtube.com/watch?v='.$enlace.'&color=4391D0&text=fff">
+                                             </iframe>';
+                                        echo
+                                            '<iframe id="iframe-youtube"width="95px" height="57px" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen 
+                                                src="https://www.youtube.com/embed/'.$enlace.'">
+                                             </iframe>
                                         ';
                                     sc_dom_etiqueta_fin('div');
                                 }
