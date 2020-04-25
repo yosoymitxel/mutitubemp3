@@ -1,5 +1,19 @@
 <?php
     require_once './Librerias/funciones.php';
+    function get_youtube_title($video_id){
+        $video_id = $video_id;
+        $url = "http://www.youtube.com/watch?v=".$video_id;
+
+        $page = file_get_contents($url);
+        $doc = new DOMDocument();
+        $doc->loadHTML($page);
+
+        $title_div = $doc->getElementById('eow-title');
+        $title = $title_div->nodeValue;
+
+        return ($title);
+    }
+
     $seBusca = (isset($_GET))?sc_arr_incluye_expresion_regular($_GET,'(https?:\/\/)?(www\.)?(youtube\.com\/watch\?v=(\w+|\-)+|youtu\.be\/\(w+|\-)+'):false;
 ?>
 <!DOCTYPE html>
@@ -67,12 +81,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="from-div-agregar"  class="form-group align-content-center pl-3 col-8">
+                        <div id="from-div-agregar"  class="form-group align-content-center pl-3 col-12 col-sm-8 col-xl-8">
                             <button class="btn btn-secondary rounded-circle" style="padding: 0px 10px;" type="button" onclick="agregarEnlaces();">
                                 <i class="mdi-content-add"></i>
                             </button>
                         </div>
-                        <div id="from-div-descargar"class="form-group align-content-center pr-3 col-4">
+                        <div id="from-div-descargar" class="form-group align-content-center pr-3 col-12 col-sm-4 col-xl-4">
                             <button class="btn btn-primary" type="submit">Descargar</button>
                         </div>
                     </form>
@@ -89,6 +103,7 @@
                                     $enlace = sc_url_get_id_youtube($enlace);
 
                                     sc_dom_etiqueta_inicio('div','div-iframe-descarga-'.$i,'col-12 my-2');
+                                    echo "<h5 id='titulo-musica-$i' class='center header text_h5 mb-4'>$i - ".get_youtube_title($enlace)."</h5>";
                                     echo
                                         '<iframe id="iframe-break"style="width:100%;min-width:200px;max-width:350px;height:57px;border:0;overflow:hidden;" scrolling="no" 
                                             src="https://break.tv/widget/button/?link=https://www.youtube.com/watch?v='.$enlace.'&color=4391D0&text=fff">
