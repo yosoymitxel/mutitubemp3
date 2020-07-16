@@ -375,7 +375,7 @@ function sc_str_generar_enlaces_html_de_string($texto){
     );
 }
 
-function sc_str_reemplazar_expresion_regular($t,$expresion,$reemplazo,$depurar){
+function sc_str_reemplazar_expresion_regular($t,$expresion,$reemplazo,$depurar=false){
     $expresion = sc_str_corregir_expresion_regular($expresion);
     sc_dev_depurar($depurar,"t : $t expresion : $expresion reemplazo : $reemplazo ",'sc_str_reemplazar_expresion_regular');
     return preg_replace(
