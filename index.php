@@ -222,8 +222,8 @@ $seBusca = (isset($_GET))?sc_arr_incluye_expresion_regular($_GET,'(https?:\/\/)?
         let cantidadEnlaces = ($('[id^=form-div-enlace-]').length);
 
         for(let i=0; i<cantidadEnlaces;i++){
-            let valorEnlace = dev_quitar_espacios_blancos(dev_dom_value(`#enlace-0${i+1}`));
-            $(`#enlace-0${i+1}`).val(dev_string_reemplazar_expresion_regular(valorEnlace,'(&(\\w+)=(\\w+))',''));
+            let valorEnlace = dev_str_quitar_espacios_blancos(dev_dom_value(`#enlace-0${i+1}`));
+            $(`#enlace-0${i+1}`).val(dev_str_reemplazar_expresion_regular(valorEnlace,'(&(\\w+)=(\\w+))',''));
         }
 
     }
