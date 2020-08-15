@@ -6,7 +6,6 @@ Descarga multiple de videos de youtube con API de Break.tv en PHP
 * [jQuery](https://jquery.com/)
 * [Materializecss](https://materializecss.com/)
 * [devBrary](https://github.com/yosoymitxel/devbrary-js-test-library)
-* [scPHP](https://github.com/yosoymitxel/scPHP)
 
 ## Instalación 
 
