@@ -22,6 +22,18 @@ $seBusca = (isset($_GET))?sc_arr_incluye_expresion_regular($_GET,'(https?:\/\/)?
     <meta name="theme-color" content="#2196F3">
     <title>MultiTubeMP3</title>
     <link rel="shortcut icon" href="https://www.computerhope.com/cdn/favicon.ico" type="image/x-icon">
+    <meta name="description" content="Multitubemp3 | Descarga múltiple de videos de youtube en formato MP3">
+    <meta name="keywords" content="descargar gratis, descargar mega,angular,aplicacion,aplicacion web,desarrollo web, descargas, Descarga múltiple de videos de youtube,Descarga múltiple de videos de youtube en formato MP3, mp3, musica de youtube">
+    <meta property="og:title" content="Multitubemp3 | Descarga múltiple de videos de youtube en formato MP3">
+    <meta property="og:description" content="Multitubemp3 | Descarga múltiple de videos de youtube en formato MP3">
+    <meta proprety="og:image" content="https://www.computerhope.com/cdn/favicon.ico">
+    <meta proprety="og:type" content="sitio de descargas">
+    <meta proprety="og:url" content="<?php echo sc_url_get_url_actual(); ?>">
+    <link rel="img_scr" href="https://www.computerhope.com/cdn/favicon.ico">
+    <link href="https://www.computerhope.com/cdn/favicon.ico" rel="image_src"/>
+    <link rel="img_scr" href="https://www.computerhope.com/cdn/favicon.ico">
+    <meta name="twitter:card" content="Descarga múltiple de videos de youtube en formato MP3" />
+    <meta name="twitter:site" content="Multitubemp3" />
     <!-- CSS  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="Assets/min/plugin-min.css" type="text/css" rel="stylesheet">
@@ -43,12 +55,12 @@ $seBusca = (isset($_GET))?sc_arr_incluye_expresion_regular($_GET,'(https?:\/\/)?
             <div class="nav-wrapper">
                 <a href="#" id="logo-container" class="brand-logo">Multi<span class="span_h2" style="color: #0069c0;font-weight: 600;">Tube</span>MP3</a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="http://www.linkea.ga/" target="_blank">Linkea</a></li>
+                    <li><a href="http://www.Multitubemp3.ga/" target="_blank">Multitubemp3</a></li>
                     <li><a href="https://github.com/yosoymitxel/" target="_blank">Desarrollador</a></li>
                     <li><a href="https://github.com/yosoymitxel/mutitubemp3.git" target="_blank">Proyecto Open Source</a></li>
                 </ul>
                 <ul id="nav-mobile" class="side-nav">
-                    <li><a href="http://www.linkea.ga/" target="_blank">Linkea</a></li>
+                    <li><a href="http://www.Multitubemp3.ga/" target="_blank">Multitubemp3</a></li>
                     <li><a href="https://github.com/yosoymitxel/" target="_blank">Desarrollador</a></li>
                     <li><a href="https://github.com/yosoymitxel/mutitubemp3.git" target="_blank">Proyecto Open Source</a></li>
                 </ul>
