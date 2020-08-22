@@ -265,7 +265,7 @@ function sc_url_borrar_cookies($depurar=false){
 
 function sc_url_get_id_youtube($urlYoutube){
     $expresionUrl     = sc_str_corregir_expresion_regular('(https?:\/\/)?(www\.)?(youtube\.com\/watch\?v=(\w+|\-)+|youtu\.be\/(\w+|\-)+)');
-    $expresionIdVideo = sc_str_corregir_expresion_regular('(((\?v=)\w+)|be\/\w+)');
+    $expresionIdVideo = sc_str_corregir_expresion_regular('(((\?v=)[\w\-]+)|be\/\w+)');
     return (sc_str_incluye_expresion_regular($urlYoutube,$expresionUrl)) ?
         substr(sc_str_extraer_expresion_regular($urlYoutube, $expresionIdVideo),3) :
         false;
