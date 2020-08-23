@@ -59,7 +59,7 @@ $seBusca = (isset($_GET)) ? sc_arr_incluye_expresion_regular($_GET,'(https?:\/\/
             <div class="nav-wrapper">
                 <a href="#" id="logo-container" class="brand-logo">Multi<span class="span_h2" style="color: #0069c0;font-weight: 600;">Tube</span>MP3</a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="http://www.linkea.ga/" target="_blank">Linkea</a></li>
+                    <li><a href="http://www.linkeapy.ga/" target="_blank">Linkeapy</a></li>
                     <li><a href="https://github.com/yosoymitxel/" target="_blank">Desarrollador</a></li>
                     <li><a href="https://github.com/yosoymitxel/mutitubemp3.git" target="_blank">Proyecto Open Source</a></li>
                 </ul>
