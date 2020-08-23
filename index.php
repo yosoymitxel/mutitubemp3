@@ -39,6 +39,10 @@ $seBusca = (isset($_GET))?sc_arr_incluye_expresion_regular($_GET,'(https?:\/\/)?
     <link href="Assets/min/plugin-min.css" type="text/css" rel="stylesheet">
     <link href="Assets/min/custom-min.css" type="text/css" rel="stylesheet">
     <link href="Assets/css/main.css" type="text/css" rel="stylesheet">
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </head>
 <body id="top" class="scrollspy">
 <!-- Pre Loader -->
@@ -55,12 +59,12 @@ $seBusca = (isset($_GET))?sc_arr_incluye_expresion_regular($_GET,'(https?:\/\/)?
             <div class="nav-wrapper">
                 <a href="#" id="logo-container" class="brand-logo">Multi<span class="span_h2" style="color: #0069c0;font-weight: 600;">Tube</span>MP3</a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="http://www.Multitubemp3.ga/" target="_blank">Multitubemp3</a></li>
+                    <li><a href="http://www.linkea.ga/" target="_blank">Linkea</a></li>
                     <li><a href="https://github.com/yosoymitxel/" target="_blank">Desarrollador</a></li>
                     <li><a href="https://github.com/yosoymitxel/mutitubemp3.git" target="_blank">Proyecto Open Source</a></li>
                 </ul>
                 <ul id="nav-mobile" class="side-nav">
-                    <li><a href="http://www.Multitubemp3.ga/" target="_blank">Multitubemp3</a></li>
+                    <li><a href="http://www.linkea.ga/" target="_blank">Linkea</a></li>
                     <li><a href="https://github.com/yosoymitxel/" target="_blank">Desarrollador</a></li>
                     <li><a href="https://github.com/yosoymitxel/mutitubemp3.git" target="_blank">Proyecto Open Source</a></li>
                 </ul>
@@ -124,6 +128,40 @@ $seBusca = (isset($_GET))?sc_arr_incluye_expresion_regular($_GET,'(https?:\/\/)?
                                              </iframe>
                                         ';
                         sc_dom_etiqueta_fin('div');
+                        ?>
+                        <div class="row justify-content-center m-0 " id="enlaces-alternativos-<?php echo $enlace?>">
+                            <div class="col toggle">
+                                <p class="mb-3 pt-2">
+                                    <a href="#enlaces-alternativos-<?php echo $enlace?>__div" class="collapsed" aria-expanded="false" aria-controls="enlaces-alternativos-<?php echo $enlace?>__div" data-toggle="collapse">¿No descarga? Aquí hay alternativas</a>
+                                </p>
+                                <div class="row justify-content-center m-0 mt-3 collapse" id="enlaces-alternativos-<?php echo $enlace?>__div" style="">
+                                    <?php
+                                        $listaEnlaces = array(
+                                                'Flvto'         => "https://www.flyoutube.com/watch?v=$enlace",
+                                                'Savefrom'      => "https://www.ssyoutube.com/watch?v=$enlace",
+                                                'Y2mate'        => "https://www.y2mate.com/es/youtube/$enlace",
+                                                'X2convert'     => "https://www.youtubex2.com/watch?v=$enlace",
+                                        );
+                                        foreach ($listaEnlaces as $key => $valor) {
+                                            sc_dom_etiqueta_inicio('div', 'div-enlaces-alternativos-' . $enlace, 'col-6');
+                                            sc_dom_crear_elemento_personalizado('a', $key,
+                                                array('id',
+                                                    'class',
+                                                    'href',
+                                                    'target'),
+                                                array("link-alternativo-$enlace-$key",
+                                                    'btn w-100 mb-2',
+                                                    $valor,
+                                                    '_blank'
+                                                )
+                                            );
+                                            sc_dom_etiqueta_fin('div');
+                                        }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                        <?php
                     }
                 }
                 sc_dom_etiqueta_fin('div');
@@ -189,9 +227,8 @@ $seBusca = (isset($_GET))?sc_arr_incluye_expresion_regular($_GET,'(https?:\/\/)?
 <!--  Scripts-->
 <script src="Assets/min/plugin-min.js"></script>
 <script src="Assets/min/custom-min.js"></script>
-<script id="devbrary">
-    $.getScript( "https://cdn.jsdelivr.net/gh/yosoymitxel/devbrary-js-test-library@master/devbrary.js", function( data, textStatus, jqxhr ) { console.log( "Fue cargado correctamente." ); });
-</script>
+
+<script id="devbrary" src="https://cdn.jsdelivr.net/gh/yosoymitxel/devbrary-js-test-library@master/devbrary.js"></script>
 
 <script id="dev-validador-formularios">
     // Example starter JavaScript for disabling form submissions if there are invalid fields
