@@ -12,7 +12,7 @@ function get_youtube_title($video_id){
     }
 }
 
-$seBusca = (isset($_GET))?sc_arr_incluye_expresion_regular($_GET,'(https?:\/\/)?(www\.)?(youtube\.com\/watch\?v=(\w+|\-)+|youtu\.be\/\(w+|\-)+'):false;
+$seBusca = (isset($_GET)) ? sc_arr_incluye_expresion_regular($_GET,'(https?:\/\/)?(www\.)?(youtube\.com\/watch\?v=(\w+|\-)+|youtu\.be\/[\w+\-]+)+'):false;
 ?>
 <!DOCTYPE html>
 <html>
@@ -166,6 +166,18 @@ $seBusca = (isset($_GET))?sc_arr_incluye_expresion_regular($_GET,'(https?:\/\/)?
                 }
                 sc_dom_etiqueta_fin('div');
                 sc_dom_etiqueta_fin('div');
+            }else{
+                ?>
+                <div class="row w-100 mb-3 mt-5">
+                    <div class="col-12">
+                        <div class="alert alert-danger">
+                            <p class="p-0 m-0">
+                                Error con el enlace
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <?php
             }
             ?>
         </div>
