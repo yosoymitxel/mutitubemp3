@@ -1,6 +1,9 @@
 <?php
-error_reporting(0);
-require_once './Librerias/funciones.php';
+ini_set('display_errors',0);
+ini_set('display_startup_errors',0);
+error_reporting(E_ALL);
+//require_once './Librerias/funciones.php';
+require_once './Librerias/sc_php.php';
 function get_youtube_title($video_id){
     $url = "http://www.youtube.com/watch?v=".$video_id;
 
@@ -8,7 +11,9 @@ function get_youtube_title($video_id){
     if(strlen($str)>0){
         $str = trim(preg_replace('/\s+/', ' ', $str)); // supports line breaks inside <title>
         preg_match("/\<title\>(.*)\<\/title\>/i",$str,$title); // ignore case
-        return sc_str_reemplazar_expresion_regular($title[1],'/( \- YouTube)/','');
+        return (sc_is_array($title,1)) ?
+            sc_str_reemplazar_expresion_regular($title[1],'/( \- YouTube)/','') :
+            'Título no encontrado';
     }
 }
 
@@ -66,7 +71,7 @@ $seBusca = (isset($_GET))?sc_arr_incluye_expresion_regular($_GET,'(https?:\/\/)?
                 <h2 class="center header text_h2"> Descarga múltiple de <span class="span_h2"> YouTube  </span></h2>
             </div>
             <div id="div-formulario-enlaces" class="col-12 d-flex justify-content-center">
-                <form class="needs-validation form-row justify-content-center" onsubmit="validacionEnlaces()" novalidate>
+                <form class="needs-validation form-row justify-content-center" onsubmit="validacionEnlaces(true)" novalidate>
                     <div id="div-form-container" class="col-12">
                         <div id="form-div-enlace-01"class="col-md-12 mb-3">
                             <label for="enlace-01">Link de vídeo de YouTube Nr. 1</label>
@@ -111,6 +116,7 @@ $seBusca = (isset($_GET))?sc_arr_incluye_expresion_regular($_GET,'(https?:\/\/)?
                                                 src="https://www.youtube.com/embed/'.$enlace.'">
                                              </iframe>
                                         ';
+
                         sc_dom_etiqueta_fin('div');
                     }
                 }
@@ -177,9 +183,7 @@ $seBusca = (isset($_GET))?sc_arr_incluye_expresion_regular($_GET,'(https?:\/\/)?
 <!--  Scripts-->
 <script src="Assets/min/plugin-min.js"></script>
 <script src="Assets/min/custom-min.js"></script>
-<script id="devbrary">
-    $.getScript( "https://cdn.jsdelivr.net/gh/yosoymitxel/devbrary-js-test-library@master/devbrary.js", function( data, textStatus, jqxhr ) { console.log( "Fue cargado correctamente." ); });
-</script>
+<script id="devbrary" src="Assets/js/devbrary.js"></script>
 
 <script id="dev-validador-formularios">
     // Example starter JavaScript for disabling form submissions if there are invalid fields
@@ -218,12 +222,15 @@ $seBusca = (isset($_GET))?sc_arr_incluye_expresion_regular($_GET,'(https?:\/\/)?
         validacionEnlaces();
     }
 
-    function validacionEnlaces(){
+    function validacionEnlaces(submit=false){
         let cantidadEnlaces = ($('[id^=form-div-enlace-]').length);
 
         for(let i=0; i<cantidadEnlaces;i++){
-            let valorEnlace = dev_quitar_espacios_blancos(dev_dom_value(`#enlace-0${i+1}`));
-            $(`#enlace-0${i+1}`).val(dev_string_reemplazar_expresion_regular(valorEnlace,'(&(\\w+)=(\\w+))',''));
+            let valorEnlace = dev_str_quitar_espacios_blancos(dev_dom_value(`#enlace-0${i+1}`));
+            $(`#enlace-0${i+1}`).val(dev_str_reemplazar_expresion_regular(valorEnlace,'(&(\\w+)=(\\w+))',''));
+            if(submit && !dev_is_string($(`#enlace-0${i+1}`).val(),3)){
+                $(`#form-div-enlace-0${i+1}`).remove()
+            }
         }
 
     }
