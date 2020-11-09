@@ -116,8 +116,41 @@ $seBusca = (isset($_GET))?sc_arr_incluye_expresion_regular($_GET,'(https?:\/\/)?
                                                 src="https://www.youtube.com/embed/'.$enlace.'">
                                              </iframe>
                                         ';
-
                         sc_dom_etiqueta_fin('div');
+                        ?>
+                        <div class="row justify-content-center m-0 " id="enlaces-alternativos-<?php echo $enlace?>">
+                            <div class="col toggle">
+                                <p class="mb-3 pt-2">
+                                    <a href="#enlaces-alternativos-<?php echo $enlace?>__div" class="collapsed" aria-expanded="false" aria-controls="enlaces-alternativos-<?php echo $enlace?>__div" data-toggle="collapse">¿No descarga? Aquí hay alternativas</a>
+                                </p>
+                                <div class="row justify-content-center m-0 mt-3 collapse" id="enlaces-alternativos-<?php echo $enlace?>__div" style="">
+                                    <?php
+                                    $listaEnlaces = array(
+                                        'Flvto'         => "https://www.flyoutube.com/watch?v=$enlace",
+                                        'Savefrom'      => "https://www.ssyoutube.com/watch?v=$enlace",
+                                        'Y2mate'        => "https://www.y2mate.com/es/youtube/$enlace",
+                                        'X2convert'     => "https://www.youtubex2.com/watch?v=$enlace",
+                                    );
+                                    foreach ($listaEnlaces as $key => $valor) {
+                                        sc_dom_etiqueta_inicio('div', 'div-enlaces-alternativos-' . $enlace, 'col-6');
+                                        sc_dom_crear_elemento_personalizado('a', $key,
+                                            array('id',
+                                                'class',
+                                                'href',
+                                                'target'),
+                                            array("link-alternativo-$enlace-$key",
+                                                'btn w-100 mb-2',
+                                                $valor,
+                                                '_blank'
+                                            )
+                                        );
+                                        sc_dom_etiqueta_fin('div');
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                        <?php
                     }
                 }
                 sc_dom_etiqueta_fin('div');
