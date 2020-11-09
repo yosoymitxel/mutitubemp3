@@ -27,11 +27,27 @@ $seBusca = (isset($_GET))?sc_arr_incluye_expresion_regular($_GET,'(https?:\/\/)?
     <meta name="theme-color" content="#2196F3">
     <title>MultiTubeMP3</title>
     <link rel="shortcut icon" href="https://www.computerhope.com/cdn/favicon.ico" type="image/x-icon">
+    <meta name="description" content="Multitubemp3 | Descarga múltiple de videos de youtube en formato MP3">
+    <meta name="keywords" content="descargar gratis, descargar mega,angular,aplicacion,aplicacion web,desarrollo web, descargas, Descarga múltiple de videos de youtube,Descarga múltiple de videos de youtube en formato MP3, mp3, musica de youtube">
+    <meta property="og:title" content="Multitubemp3 | Descarga múltiple de videos de youtube en formato MP3">
+    <meta property="og:description" content="Multitubemp3 | Descarga múltiple de videos de youtube en formato MP3">
+    <meta proprety="og:image" content="https://www.computerhope.com/cdn/favicon.ico">
+    <meta proprety="og:type" content="sitio de descargas">
+    <meta proprety="og:url" content="<?php echo sc_url_get_url_actual(); ?>">
+    <link rel="img_scr" href="https://www.computerhope.com/cdn/favicon.ico">
+    <link href="https://www.computerhope.com/cdn/favicon.ico" rel="image_src"/>
+    <link rel="img_scr" href="https://www.computerhope.com/cdn/favicon.ico">
+    <meta name="twitter:card" content="Descarga múltiple de videos de youtube en formato MP3" />
+    <meta name="twitter:site" content="Multitubemp3" />
     <!-- CSS  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="Assets/min/plugin-min.css" type="text/css" rel="stylesheet">
     <link href="Assets/min/custom-min.css" type="text/css" rel="stylesheet">
     <link href="Assets/css/main.css" type="text/css" rel="stylesheet">
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </head>
 <body id="top" class="scrollspy">
 <!-- Pre Loader -->
@@ -155,8 +171,7 @@ $seBusca = (isset($_GET))?sc_arr_incluye_expresion_regular($_GET,'(https?:\/\/)?
                 }
                 sc_dom_etiqueta_fin('div');
                 sc_dom_etiqueta_fin('div');
-            }
-            ?>
+            }?>
         </div>
     </div>
 </div>
@@ -269,4 +284,11 @@ $seBusca = (isset($_GET))?sc_arr_incluye_expresion_regular($_GET,'(https?:\/\/)?
     }
 
 </script>
-</html>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-175741564-2"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-175741564-2');
+</script>
